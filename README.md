@@ -1,23 +1,52 @@
-# XORLinkedList (C++)
+# 🔗 XOR Linked List in C++
 
-An implementation of a **memory-efficient doubly linked list** in C++ using the XOR linked list technique.  
-This data structure stores the XOR of previous and next node addresses instead of storing two explicit pointers,  
-reducing memory usage compared to a traditional doubly linked list.
+This project implements an **XOR Linked List (XORLL)** in C++ as a template container.  
+Unlike traditional linked lists that store both **next** and **previous** pointers, each node in an XOR Linked List stores a single value:  
 
----
+both = prev ⊕ next
 
-## ✨ Features
 
-- Space-efficient list nodes (`prev ^ next` pointer trick).
-- `push_front`, `push_back`, `pop_front`, `pop_back`.
-- Insert and erase at arbitrary positions.
-- Forward and reverse traversal via custom iterators.
-- STL-style iterators (`begin`, `end`, `rbegin`, `rend`).
-- Stream output (`operator<<`) for easy debugging.
+This reduces memory usage but requires careful pointer arithmetic when traversing.  
+
+The implementation also includes a **bidirectional iterator** and supports STL-like iteration patterns.
 
 ---
 
-## ⚙️ How it works
+## 🚀 Features
 
-Each node stores a single pointer `both`, which is the XOR of the addresses of the previous and next nodes:
+- **Templated Design** → Works with any data type.  
+- **Smart Copy/Move Semantics** → Implements deep copy constructor, assignment operator, and move semantics.  
+- **Bidirectional Iterator** → Allows traversal in both forward and reverse directions.  
+- **Standard List Operations**:
+  - `push_back`, `push_front`  
+  - `pop_back`, `pop_front`  
+  - `insert` at position  
+  - `erase` at position  
+  - `clean` (clear the list)  
+- **Utility Methods**:
+  - `front()`, `back()`  
+  - `empty()`  
+  - `getSize()`  
+- **Stream Output Operator (`<<`)** for easy printing.  
 
+---
+
+## 📂 Project Structure
+
+```
+.
+├── XORList.h # Class definition (template & iterator)
+├── XORList.hpp # Method implementations
+├── main.cpp # Example usage and test driver
+└── README.md # Documentation
+```
+
+---
+
+## 🏗️ Compilation
+
+Compile with **C++17 or later**:
+
+```bash
+g++ -std=c++17 -o xorll main.cpp
+```
