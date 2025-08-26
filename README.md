@@ -8,8 +8,6 @@ both = prev ⊕ next
 
 This reduces memory usage but requires careful pointer arithmetic when traversing.  
 
-The implementation also includes a **bidirectional iterator** and supports STL-like iteration patterns.
-
 ---
 
 ## 🚀 Features
